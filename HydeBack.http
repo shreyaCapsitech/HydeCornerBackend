@@ -1,0 +1,6 @@
+@HydeBack_HostAddress = http://localhost:5001
+
+GET {{HydeBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
