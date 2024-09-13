@@ -6,7 +6,7 @@ namespace HydeBack.Services
     {
         public string? ConnectionString { get; set; }
         public string? DatabaseName { get; set; }
-        public string? AdminsCollectionName { get; set; }
+        public string? ItemsCollectionName { get; set; }
         public string? LoginsCollectionName { get; set; }
     }
 }

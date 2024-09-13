@@ -47,6 +47,25 @@ namespace HydeBack.Controllers
             return CreatedAtAction(nameof(GetLoginById), new { id = login.Id }, login);
         }
 
+        // POST api/<LoginController>/authenticate
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> AuthenticateLogin([FromBody] Login login)
+        {
+            if (login == null || string.IsNullOrEmpty(login.Username) || string.IsNullOrEmpty(login.Password))
+            {
+                return BadRequest("Username or password not provided.");
+            }
+
+            var foundLogin = await _loginService.GetLoginByUsernameAndPassword(login.Username, login.Password);
+
+            if (foundLogin == null)
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            return Ok(new { role = foundLogin.Role });
+        }
+
         // PUT api/<LoginController>/5
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> EditLogins(string id, [FromBody] Login login)

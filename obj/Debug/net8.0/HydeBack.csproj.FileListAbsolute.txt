@@ -88,3 +88,4 @@ C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\refint\HydeBack
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\HydeBack.pdb
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\HydeBack.genruntimeconfig.cache
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\ref\HydeBack.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\HydeBack.sourcelink.json

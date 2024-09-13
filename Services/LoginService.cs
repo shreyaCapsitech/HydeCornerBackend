@@ -22,6 +22,13 @@ namespace HydeBack.Services
 
             return await _loginsCollection.Find(_ => true).ToListAsync();
         }
+        public async Task<Login?> GetLoginByUsernameAndPassword(string username, string password)
+        {
+            var filter = Builders<Login>.Filter.Eq(l => l.Username, username) &
+                         Builders<Login>.Filter.Eq(l => l.Password, password);
+
+            return await _loginsCollection.Find(filter).FirstOrDefaultAsync();
+        }
 
         public async Task<Login> GetLoginById(string id)
         {

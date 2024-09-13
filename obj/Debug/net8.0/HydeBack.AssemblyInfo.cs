@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HydeBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df9dcf6af3bf68e6683e2cbe352bddf5ae400985")]
 [assembly: System.Reflection.AssemblyProductAttribute("HydeBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HydeBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
