@@ -6,5 +6,7 @@
         public string DatabaseName { get; set; } = null!;
         public string ItemsCollectionName { get; set; } = null!;
         public string LoginsCollectionName { get; set; } = null!;
+        public string CategoryCollectionName { get; set; } = null!;
+        public string SubCategoryCollectionName { get; set; } = null!;
     }
 }

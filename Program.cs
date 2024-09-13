@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
 builder.Services.AddSingleton<ItemService>();
 builder.Services.AddSingleton<LoginService>();
+builder.Services.AddSingleton<CategoryService>();
+builder.Services.AddSingleton<SubCategoryService>();
 
 builder.Services.AddCors(options =>
 {

@@ -22,23 +22,28 @@ namespace HydeBack.Services
 
             return await _loginsCollection.Find(_ => true).ToListAsync();
         }
-        public async Task<Login?> GetLoginByUsernameAndPassword(string username, string password)
-        {
-            var filter = Builders<Login>.Filter.Eq(l => l.Username, username) &
-                         Builders<Login>.Filter.Eq(l => l.Password, password);
-
-            return await _loginsCollection.Find(filter).FirstOrDefaultAsync();
-        }
 
         public async Task<Login> GetLoginById(string id)
         {
             return await _loginsCollection.Find(login => login.Id == id).FirstOrDefaultAsync();
         }
 
-        public async System.Threading.Tasks.Task AddLogins(Login login)
+        public async Task AddLogins(Login login)
         {
+            // Hash the password before storing
+            login.Password = BCrypt.Net.BCrypt.HashPassword(login.Password);
             await _loginsCollection.InsertOneAsync(login);
-            return;
+        }
+
+        // Authenticate user
+        public async Task<Login?> AuthenticateUser(string username, string password)
+        {
+            var login = await _loginsCollection.Find(l => l.Username == username).FirstOrDefaultAsync();
+            if (login != null && BCrypt.Net.BCrypt.Verify(password, login.Password))
+            {
+                return login; // Password matches
+            }
+            return null; // Invalid credentials
         }
 
         public async System.Threading.Tasks.Task EditLogins(string id, Login login)
@@ -53,5 +58,6 @@ namespace HydeBack.Services
             await _loginsCollection.DeleteOneAsync(new BsonDocument("_id", new ObjectId(id)));
             return;
         }
+
     }
 }

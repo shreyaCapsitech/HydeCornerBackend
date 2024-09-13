@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8Ao6MmEB7nE=",
+  "dgSpecHash": "58RhIpnQq0w=",
   "success": true,
   "projectFilePath": "C:\\Users\\CT_USER\\Desktop\\Hyde\\HydeBack\\HydeBack\\HydeBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CT_USER\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\CT_USER\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "C:\\Users\\CT_USER\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\CT_USER\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\CT_USER\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\CT_USER\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",

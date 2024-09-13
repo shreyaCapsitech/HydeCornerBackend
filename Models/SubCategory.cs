@@ -1,10 +1,10 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
 
 namespace HydeBack.Models
 {
-    public class Item
+    public class SubCategory
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -14,13 +14,9 @@ namespace HydeBack.Models
         [Required]
         public string Category { get; set; } = null!;
 
-        [BsonElement("subcategory")]
+        [BsonElement("subcategoryname")]
         [Required]
-        public string SubCategory { get; set; } = null!;
-
-        [BsonElement("itemname")]
-        [Required]
-        public string ItemName { get; set; } = null!;
+        public string SubCategoryName { get; set; } = null!;
 
         [BsonElement("imageurl")]
         [Required]
@@ -29,10 +25,5 @@ namespace HydeBack.Models
         [BsonElement("desc")]
         [Required]
         public string Desc { get; set; } = null!;
-
-        [BsonElement("price")]
-        [Required]
-        public string Price { get; set; } = null!;
-
     }
 }
