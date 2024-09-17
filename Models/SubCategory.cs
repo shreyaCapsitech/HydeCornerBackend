@@ -8,22 +8,27 @@ namespace HydeBack.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string? Id { get; set; }
 
         [BsonElement("category")]
         [Required]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string Category { get; set; } = null!;
 
         [BsonElement("subcategoryname")]
         [Required]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string SubCategoryName { get; set; } = null!;
 
         [BsonElement("imageurl")]
         [Required]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string ImageUrl { get; set; } = null!;
 
         [BsonElement("desc")]
         [Required]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string Desc { get; set; } = null!;
     }
 }

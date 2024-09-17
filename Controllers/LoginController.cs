@@ -73,7 +73,7 @@ namespace HydeBack.Controllers
                 return Unauthorized(new { message = "Invalid credentials" });
             }
 
-            return Ok(authenticatedUser); // Optionally, return a JWT token here for session management
+            return Ok(new { username = authenticatedUser.Username, role = authenticatedUser.Role}); // Optionally, return a JWT token here for session management
         }
 
         // DELETE api/<LoginController>/5

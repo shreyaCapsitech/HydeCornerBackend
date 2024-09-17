@@ -38,8 +38,8 @@ namespace HydeBack.Services
         // Authenticate user
         public async Task<Login?> AuthenticateUser(string username, string password)
         {
-            var login = await _loginsCollection.Find(l => l.Username == username).FirstOrDefaultAsync();
-            if (login != null && BCrypt.Net.BCrypt.Verify(password, login.Password))
+            var login = await _loginsCollection.Find(l => l.Username == username && l.Password == password).FirstOrDefaultAsync();
+            if (login != null) //&& BCrypt.Net.BCrypt.Verify(password, login.Password))
             {
                 return login; // Password matches
             }

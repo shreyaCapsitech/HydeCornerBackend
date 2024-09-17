@@ -26,20 +26,20 @@ namespace HydeBack.Services
             return await _categoryCollection.Find(category => category.Id == id).FirstOrDefaultAsync();
         }
 
-        public async System.Threading.Tasks.Task AddCategory(Category category)
+        public async Task AddCategory(Category category)
         {
             await _categoryCollection.InsertOneAsync(category);
             return;
         }
 
-        public async System.Threading.Tasks.Task EditCategory(string id, Category category)
+        public async Task EditCategory(string id, Category category)
         {
             var filter = new BsonDocument("_id", new ObjectId(id));
             await _categoryCollection.ReplaceOneAsync(filter, category);
             return;
         }
 
-        public async System.Threading.Tasks.Task DeleteCategory(string id)
+        public async Task DeleteCategory(string id)
         {
             await _categoryCollection.DeleteOneAsync(new BsonDocument("_id", new ObjectId(id)));
             return;
