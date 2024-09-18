@@ -35,13 +35,14 @@ namespace HydeBack.Controllers
         }
 
         // POST api/<CategoryController>
-        [HttpPost()]
+        [HttpPost]
         public async Task<IActionResult> AddSubCategory([FromBody] SubCategory subCategory)
         {
-            if (subCategory == null)
+            if (subCategory == null || string.IsNullOrEmpty(subCategory.CategoryId))
             {
-                return BadRequest();
+                return BadRequest("Invalid subcategory or missing CategoryId");
             }
+
             await _subCategoryService.AddSubCategory(subCategory);
             return CreatedAtAction(nameof(GetSubCategoryById), new { id = subCategory.Id }, subCategory);
         }

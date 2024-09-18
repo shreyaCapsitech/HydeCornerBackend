@@ -11,10 +11,10 @@ namespace HydeBack.Models
         [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string? Id { get; set; }
 
-        [BsonElement("category")]
-        [Required]
+        [BsonElement("categoryId")]
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonIgnoreIfNull, BsonIgnoreIfDefault]
-        public string Category { get; set; } = null!;
+        public string CategoryId { get; set; } = null!;
 
         [BsonElement("subcategoryname")]
         [Required]

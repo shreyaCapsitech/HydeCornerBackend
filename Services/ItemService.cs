@@ -11,11 +11,16 @@ namespace HydeBack.Services
     public class ItemService
     {
         private readonly IMongoCollection<Item> _itemsCollection;
+        private readonly IMongoCollection<Category> _categoryCollection;
+        private readonly IMongoCollection<SubCategory> _subCategoryCollection;
+
         public ItemService(IOptions<MongoDBSettings> mongodbSettings)
         {
             MongoClient client = new MongoClient(mongodbSettings.Value.ConnectionString);
             IMongoDatabase database = client.GetDatabase(mongodbSettings.Value.DatabaseName);
             _itemsCollection = database.GetCollection<Item>(mongodbSettings.Value.ItemsCollectionName);
+            _categoryCollection = database.GetCollection<Category>(mongodbSettings.Value.CategoryCollectionName);
+            _subCategoryCollection = database.GetCollection<SubCategory>(mongodbSettings.Value.SubCategoryCollectionName);
         }
 
         public async Task<List<Item>> GetItems()

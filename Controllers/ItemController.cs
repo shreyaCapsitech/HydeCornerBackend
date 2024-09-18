@@ -40,10 +40,11 @@ namespace HydeBack.Controllers
         [HttpPost()]
         public async Task<IActionResult> AddItems([FromBody] Item item)
         {
-            if (item == null)
+            if (item == null || string.IsNullOrEmpty(item.CategoryId) || string.IsNullOrEmpty(item.SubCategoryId))
             {
-                return BadRequest();
+                return BadRequest("Invalid subcategory or missing CategoryId");
             }
+
             await _itemService.AddItems(item);
             return CreatedAtAction(nameof(GetItemById), new { id = item.Id }, item);
         }

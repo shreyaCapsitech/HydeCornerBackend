@@ -9,6 +9,7 @@ builder.Services.AddSingleton<ItemService>();
 builder.Services.AddSingleton<LoginService>();
 builder.Services.AddSingleton<CategoryService>();
 builder.Services.AddSingleton<SubCategoryService>();
+builder.Services.AddSingleton<UserProfileService>();
 
 builder.Services.AddCors(options =>
 {

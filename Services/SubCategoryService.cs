@@ -8,11 +8,13 @@ namespace HydeBack.Services
     public class SubCategoryService
     {
         private readonly IMongoCollection<SubCategory> _subCategoryCollection;
+        private readonly IMongoCollection<Category> _categoryCollection;
         public SubCategoryService(IOptions<MongoDBSettings> mongodbSettings)
         {
             MongoClient client = new MongoClient(mongodbSettings.Value.ConnectionString);
             IMongoDatabase database = client.GetDatabase(mongodbSettings.Value.DatabaseName);
             _subCategoryCollection = database.GetCollection<SubCategory>(mongodbSettings.Value.SubCategoryCollectionName);
+            _categoryCollection = database.GetCollection<Category>(mongodbSettings.Value.CategoryCollectionName);
         }
 
         public async Task<List<SubCategory>> GetSubCategory()
