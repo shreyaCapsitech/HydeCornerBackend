@@ -11,5 +11,7 @@ namespace HydeBack.Services
         public string? CategoryCollectionName { get; set; }
         public string? SubCategoryCollectionName { get; set; }
         public string? UserProfileCollectionName { get; set; }
+        public string? AttendeeCollectionName { get; set; }
+        public string? OrderCollectionName { get; set; }
     }
 }

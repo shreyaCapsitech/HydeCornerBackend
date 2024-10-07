@@ -1,5 +1,6 @@
 ﻿using HydeBack.Models;
 using HydeBack.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,6 +19,7 @@ namespace HydeBack.Controllers
 
         // GET: api/<ItemController>
         [HttpGet()]
+        [Authorize]
         public async Task<ActionResult<Item>> GetItems()
         {
             var items = await _itemService.GetItems();
@@ -26,6 +28,7 @@ namespace HydeBack.Controllers
 
         // GET api/<ItemController>/5
         [HttpGet("{id:length(24)}")]
+        [Authorize]
         public async Task<ActionResult<Item>> GetItemById(string id)
         {
             var item = await _itemService.GetItemById(id);
@@ -35,6 +38,7 @@ namespace HydeBack.Controllers
             }
             return Ok(item);
         }
+
 
         // POST api/<ItemController>
         [HttpPost()]

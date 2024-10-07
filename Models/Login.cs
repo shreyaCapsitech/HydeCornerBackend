@@ -26,5 +26,6 @@ namespace HydeBack.Models
         [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string Password { get; set; } = null!;
     }
+
 }
 

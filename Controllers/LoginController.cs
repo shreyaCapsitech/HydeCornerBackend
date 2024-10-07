@@ -1,5 +1,6 @@
 ﻿using HydeBack.Models;
 using HydeBack.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HydeBack.Controllers
@@ -17,6 +18,7 @@ namespace HydeBack.Controllers
 
         // GET: api/<LoginController>
         [HttpGet()]
+        [Authorize]
         public async Task<ActionResult<Login>> GetLogins()
         {
             var logins = await _loginService.GetLogins();
@@ -25,6 +27,7 @@ namespace HydeBack.Controllers
 
         // GET api/<LoginController>/5
         [HttpGet("{id:length(24)}")]
+        [Authorize]
         public async Task<ActionResult<Login>> GetLoginById(string id)
         {
             var login = await _loginService.GetLoginById(id);

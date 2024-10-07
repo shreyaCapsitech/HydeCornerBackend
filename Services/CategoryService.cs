@@ -25,7 +25,7 @@ namespace HydeBack.Services
         {
             return await _categoryCollection.Find(category => category.Id == id).FirstOrDefaultAsync();
         }
-
+     
         public async Task AddCategory(Category category)
         {
             await _categoryCollection.InsertOneAsync(category);

@@ -1,31 +1,15 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
 
 namespace HydeBack.Models
 {
-    public class UserProfile
+    public class Attendee
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string? Id { get; set; }
-
-        [BsonElement("role")]
-        [Required]
-        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
-        public string? Role { get; set; } = null!;
-
-        [BsonElement("username")]
-        [Required]
-        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
-        public string Username { get; set; } = null!;
-
-        [BsonElement("password")]
-        [Required]
-        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
-        public string Password { get; set; } = null!;
 
         [BsonElement("name")]
         [Required]
@@ -41,6 +25,11 @@ namespace HydeBack.Models
         [Required]
         [BsonIgnoreIfNull, BsonIgnoreIfDefault]
         public string Age { get; set; } = null!;
-    }
 
+        [BsonElement("designation")]
+        [Required]
+        [BsonIgnoreIfNull, BsonIgnoreIfDefault]
+        public string Designation { get; set; } = null!;
+
+    }
 }

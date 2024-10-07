@@ -34,20 +34,20 @@ namespace HydeBack.Services
             return await _itemsCollection.Find(item => item.Id == id).FirstOrDefaultAsync();
         }
 
-        public async System.Threading.Tasks.Task AddItems(Item item)
+        public async Task AddItems(Item item)
         {
             await _itemsCollection.InsertOneAsync(item);
             return;
         }
 
-        public async System.Threading.Tasks.Task EditItems(string id, Item item)
+        public async Task EditItems(string id, Item item)
         {
             var filter = new BsonDocument("_id", new ObjectId(id));
             await _itemsCollection.ReplaceOneAsync(filter, item);
             return;
         }
 
-        public async System.Threading.Tasks.Task DeleteItems(string id)
+        public async Task DeleteItems(string id)
         {
             await _itemsCollection.DeleteOneAsync(new BsonDocument("_id", new ObjectId(id)));
             return;

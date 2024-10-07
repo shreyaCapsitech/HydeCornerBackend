@@ -90,3 +90,11 @@ C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\HydeBack.genrun
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\ref\HydeBack.dll
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\obj\Debug\net8.0\HydeBack.sourcelink.json
 C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\CT_USER\Desktop\Hyde\HydeBack\HydeBack\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

@@ -46,14 +46,14 @@ namespace HydeBack.Services
             return null; // Invalid credentials
         }
 
-        public async System.Threading.Tasks.Task EditLogins(string id, Login login)
+        public async Task EditLogins(string id, Login login)
         {
             var filter = new BsonDocument("_id", new ObjectId(id));
             await _loginsCollection.ReplaceOneAsync(filter, login);
             return;
         }
 
-        public async System.Threading.Tasks.Task DeleteLogins(string id)
+        public async Task DeleteLogins(string id)
         {
             await _loginsCollection.DeleteOneAsync(new BsonDocument("_id", new ObjectId(id)));
             return;

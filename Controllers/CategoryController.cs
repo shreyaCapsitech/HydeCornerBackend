@@ -1,5 +1,6 @@
 ﻿using HydeBack.Models;
 using HydeBack.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HydeBack.Controllers
@@ -16,6 +17,7 @@ namespace HydeBack.Controllers
 
         // GET: api/<CategoryController>
         [HttpGet()]
+        [Authorize]
         public async Task<ActionResult<Category>> GetCategory()
         {
             var categorys = await _categoryService.GetCategory();
@@ -24,6 +26,7 @@ namespace HydeBack.Controllers
 
         // GET api/<CategoryController>/5
         [HttpGet("{id:length(24)}")]
+        [Authorize]
         public async Task<ActionResult<Category>> GetCategoryById(string id)
         {
             var category = await _categoryService.GetCategoryById(id);
@@ -33,6 +36,7 @@ namespace HydeBack.Controllers
             }
             return Ok(category);
         }
+
 
         // POST api/<CategoryController>
         [HttpPost()]
